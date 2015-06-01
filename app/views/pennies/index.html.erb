@@ -1,0 +1,49 @@
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+       
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <p> Hello
+        <ul class="nav navbar-nav">
+            <li> ScrapingTool </li>
+        </ul>
+
+
+        </div>
+
+    </div>
+</div>
+<!-- -->
+
+        <%= link_to "Download your Penny ads", pennies_path(format: "csv", search: params[:search]), class: "btn btn-primary" %>
+
+
+<table>
+  <tr> 
+    <td>Title</td>
+    <td>Body</td>
+    <td style="padding: 10px;">Location</td>
+    <td>Image</td>
+  </tr> 
+
+
+
+  <tr> 
+    <% @pennys.each do |p| %> 
+      <td><%=p.title%> </td>
+      <td> <%=p.body%></td>
+      <td><%=p.contact %> </td>
+      <td><%=image_tag("#{p.image}")%> </td>
+  </tr> 
+  <% end %> 
+
+</table>
+
